@@ -20,6 +20,10 @@ def split_snap(fname, ratio):
                 p[k] *= 1 + 1e-7*(np.random.rand(p[k].shape)-0.5)
     wtipsy('split_'+str(ratio)+'_'+fname, h,g,d,s)
 
+def split_aux(fname, ratio):
+    data = rarray(fname)
+    warray('split_'+str(ratio)+'_'+fname, np.repeat(data, ratio))
+
 if __name__ == "__main__":
     if lens(argv) < 3:
         print("USAGE: hideous_splitter.py snapshot_filename split_ratio") 
